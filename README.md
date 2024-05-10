@@ -1,8 +1,9 @@
-cd frontend 
+<!-- cd frontend 
 npm run start
 
 cd backend 
-npm run dev
+npm run dev -->
+json-server --watch src/db.json --port 3005
 
 https://picsum.photos/280/150
 
