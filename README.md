@@ -1,70 +1,137 @@
-# Getting Started with Create React App
+cd frontend 
+npm run start
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+cd backend 
+npm run dev
 
-## Available Scripts
+https://picsum.photos/280/150
 
-In the project directory, you can run:
+Области хранения данных:
 
-### `npm start`
+- база данныч на json-server
+- BFF
+- редакс стор
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Сущности приложения:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- пользователь: БД (список пользователей), BFF (сессия текущего), стор (отображение в браузере)
+- роль пользователя: БД (список ролей), BFF (сессия пользователя с ролью), стор (отображение в браузере)
+- категории: БД (список категорий), стор(отображение в браузере)
+- изделия: БД (список изделий), стор(отображение в браузере)
+- корзина: БД (список товаров), стор (отображение в браузере)
 
-### `npm test`
+Таблицы БД:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- пользователи - users: user_id / login / password / registered_at / role_id
+- роли - roles: role_id / name
+- категории - categories: category_id / name / category_image
+- изделия - confections: confection_id / name / confection_image / description / price
+- корзина - basket: basket_id / user_id / confection_id / count / price
+- заказы - orders: order_id / user_id / confection_id / ordered_at / address / count / price
 
-### `npm run build`
+Схема состояние на BFF:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- сессия текущего пользователя: login / password / role
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Схема для редакс стора (на клиенте):
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- user: user_id / login / roleId
+- categories: массив confection: category_id / name / imageUrl
+- confection: confection_id / name / imageUrl / description / price / basket: массив basket: basket_id / count
+- basket: basket_id / count / price / confections: массив confection: confection_id / name / imageUrl / price
+- users: массив user: user_id / login / registeredAt / role
+- orders: price / basket: массив basket: basket_id / count
 
-### `npm run eject`
+{
+"users": [
+{
+"user_id": "001",
+"login": "Miran",
+"password": "qwe123",
+"registered_at": "2001-04-26",
+"role_id": "0"
+}
+],
+"roles": [
+{
+"role_id": "0",
+"name": "Админ"
+},
+{
+"role_id": "1",
+"name": "Модер"
+},
+{
+"role_id": "2",
+"name": "Покупатель"
+}
+],
+"categories": [
+{
+"category_id": "001",
+"name": "Медовик",
+"category_image": "https://fastly.picsum.photos/id/34/280/150.jpg?hmac=LXe9Ws0WRyE2u89OHuu6g1y-br-2UiU54H5E5NzG9l0"
+},
+{
+"category_id": "002",
+"name": "Творожный",
+"category_image": "https://fastly.picsum.photos/id/512/280/150.jpg?hmac=cW3KDiC7RmYVpVHR8Czs304R8iLqdwgrA8ZxS6CbHTc"
+},
+{
+"category_id": "003",
+"name": "Бисквит",
+"category_image": "https://fastly.picsum.photos/id/987/280/150.jpg?hmac=GmPuYaNcCVUZlfNcneHax4jhxltdBSwwvCfGoYnhjH4"
+}
+],
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    "orders": [
+    	{
+    		"order_id": "001",
+    		"user_id": "001",
+    		"confection_id": "001",
+    		"ordered_at": "2024-10-10",
+    		"busket_id": "1",
+    		"adress": "Aitmatov 66a",
+    		"count": "5",
+    		"price": "1599"
+    	}
+    ],
+    "confections": [
+    	{
+    		"confection_id": "001",
+    		"name": "Медовый Торт",
+    		"confection_image": "https://fastly.picsum.photos/id/220/280/150.jpg?hmac=3hrCLiIs6S79m9rxRpfJxkY95CEPFvqiZN35mhCrwFQ",
+    		"description": "Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности требуют от нас анализа направлений прогрессивного развития. Идейные соображения высшего порядка, а также новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач.<br><br>      Разнообразный и богатый опыт постоянный количественный рост и сфера нашей активности в значительной степени обуславливает создание модели развития. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия. Значимость этих проблем настолько очевидна, что консультация с широким активом играет важную роль в формировании существенных финансовых и административных условий. Равным образом постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет оценить значение новых предложений.",
+    		"price": "1500"
+    	},
+    	{
+    		"confection_id": "002",
+    		"name": "Медовый Торт2",
+    		"confection_image": "https://fastly.picsum.photos/id/367/280/150.jpg?hmac=tysnv2aILsA-xJH0yl4Otxlak2m-sYyJTiLUzHuUQPE",
+    		"description": "Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности требуют от нас анализа направлений прогрессивного развития. Идейные соображения высшего порядка, а также новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач.<br><br>      Разнообразный и богатый опыт постоянный количественный рост и сфера нашей активности в значительной степени обуславливает создание модели развития. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия. Значимость этих проблем настолько очевидна, что консультация с широким активом играет важную роль в формировании существенных финансовых и административных условий. Равным образом постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет оценить значение новых предложений.",
+    		"price": "1500"
+    	},
+    	{
+    		"confection_id": "003",
+    		"name": "Медовый Торт3",
+    		"confection_image": "https://fastly.picsum.photos/id/927/280/150.jpg?hmac=jR2vGXztlmT8EwYhVY7EDgRje9MYrQl16KSJgRD_HVY",
+    		"description": "Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности требуют от нас анализа направлений прогрессивного развития. Идейные соображения высшего порядка, а также новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач.<br><br>      Разнообразный и богатый опыт постоянный количественный рост и сфера нашей активности в значительной степени обуславливает создание модели развития. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия. Значимость этих проблем настолько очевидна, что консультация с широким активом играет важную роль в формировании существенных финансовых и административных условий. Равным образом постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет оценить значение новых предложений.",
+    		"price": "1500"
+    	},
+    	{
+    		"confection_id": "004",
+    		"name": "Медовый Торт4",
+    		"confection_image": "https://fastly.picsum.photos/id/208/280/150.jpg?hmac=jISd3ps0H5MYiNhj_bUUpSg_gzJ2LSyD50v1Te5-xdo",
+    		"description": "Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности требуют от нас анализа направлений прогрессивного развития. Идейные соображения высшего порядка, а также новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач.<br><br>      Разнообразный и богатый опыт постоянный количественный рост и сфера нашей активности в значительной степени обуславливает создание модели развития. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия. Значимость этих проблем настолько очевидна, что консультация с широким активом играет важную роль в формировании существенных финансовых и административных условий. Равным образом постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет оценить значение новых предложений.",
+    		"price": "1500"
+    	},
+    	{
+    		"confection_id": "005",
+    		"name": "Медовый Торт5",
+    		"confection_image": "https://fastly.picsum.photos/id/811/280/150.jpg?hmac=9u3Yagtu6SfhzU3EAicDvaVNr8oiKdq9Ws5m3GjqUz8",
+    		"description": "Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности требуют от нас анализа направлений прогрессивного развития. Идейные соображения высшего порядка, а также новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач.<br><br>      Разнообразный и богатый опыт постоянный количественный рост и сфера нашей активности в значительной степени обуславливает создание модели развития. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия. Значимость этих проблем настолько очевидна, что консультация с широким активом играет важную роль в формировании существенных финансовых и административных условий. Равным образом постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет оценить значение новых предложений.",
+    		"price": "1500"
+    	}
+    ]
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+}
