@@ -6,13 +6,13 @@ const LogoText = styled.div`
     font-weight: 600;
     font-family: "PacificoRegular";
     line-height: 48px;
-    margin: 5px 25px 0 10px;
+    margin: 2px 25px 0 10px;
     color: #F34970;
 `;
 
 const LogoContainer = ({ className }) => (
     <div className={className}>
-        <Icon id="fa-birthday-cake" size="36px" color="#F34970" margin="7px 0 0 20px" />
+        <Icon id="fa-birthday-cake" size="36px" color="#F34970" margin="2px 0 0 20px" />
         <div>
             <LogoText>Sweet-Time</LogoText>
         </div>

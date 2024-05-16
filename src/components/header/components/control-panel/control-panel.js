@@ -19,7 +19,7 @@ const StyledLink = styled(Link)`
     height: ${({ height = '30px' }) => height};
     border: 1px solid #F34970;
     border-radius: ${({ radius = '12px' }) => radius};
-    margin: ${({ margin = '14px 10px' }) => margin};
+    margin: ${({ margin = '10px 10px' }) => margin};
     background-color: #fff;
     &:hover{
         cursor: pointer;
@@ -38,7 +38,7 @@ const ControlPanelContainer = ({ className }) => {
                 <StyledLink to="/confection">Новое изделие</StyledLink>
                 <StyledLink to="/category">Новая категория</StyledLink>
                 <StyledLink to="/users">Пользователи</StyledLink>
-                <StyledLink size='18px' width='130px' height='40px' margin='7px 20px 0 60px' to="/login">Войти</StyledLink>
+                <StyledLink size='18px' width='130px' height='40px' margin='4px 20px 0 60px' to="/login">Войти</StyledLink>
             </RightAligned>
         </div>
     )

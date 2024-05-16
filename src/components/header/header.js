@@ -14,10 +14,10 @@ export const Header = styled(HeaderContainer)`
   position: fixed;
   top: 0;
   width: 1310px;
-  height: 60px;
+  height: 50px;
   padding: 20px 20px;
   background-color: #fff;
-  box-shadow: 0px -2px 17px #F34970;
+  box-shadow: 0px 2px 12px #F34970;
 `;
 
 // Страницы:
