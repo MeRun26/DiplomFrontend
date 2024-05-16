@@ -1,5 +1,18 @@
 import { Route, Routes } from 'react-router-dom';
+import { Header } from './components';
 import styled from 'styled-components';
+
+const AppColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 1350px;
+  min-height: 100%;
+  margin: 0 auto;
+  background: rgb(0,206,249);
+  background-color: #FFF;
+`;
+
 
 const Content = styled.div`
 
@@ -10,19 +23,21 @@ const H2 = styled.h2`
 text-align: center;
 `;
 
-const Header = () => <div>SHAPKA</div>
+
 const Footer = () => <div>FOOTER</div>
+
+
 
 export const SweetTime = () => {
   return (
-    <>
+    <AppColumn>
       <Header />
       <Content>
-        <H2>Content page</H2>
+        <H2>Контент Страницы</H2>
 
         <Routes>
           <Route path='/' element={<div>MAIN PAGE</div>} />
-          <Route path='/lodin' element={<div>LOGIN PAGE</div>} />
+          <Route path='/login' element={<div>LOGIN PAGE</div>} />
           <Route path='/register' element={<div>REGISTER PAGE</div>} />
           <Route path='/category/:category_id' element={<div>CATEGORY PAGE</div>} />
           <Route path='/category' element={<div>NEW CATEGORY PAGE</div>} />
@@ -36,6 +51,6 @@ export const SweetTime = () => {
 
       </Content>
       <Footer />
-    </>
+    </AppColumn>
   );
 }
