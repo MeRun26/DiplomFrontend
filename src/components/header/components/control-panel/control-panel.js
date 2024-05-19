@@ -1,50 +1,54 @@
 import { Link } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux';
 import styled from "styled-components";
-// import { Icon } from "../../../icon/icon";
+import { Button, Icon } from '../../../../components';
+import { selectUserRole, selectUserLogin, selectUserSession } from '../../../../selectors';
+import { ROLE } from '../../../../constants';
+import { logout } from '../../../../actions';
 
 const RightAligned = styled.div`
     display: flex;
     justify-content: flex-end;
 `;
 
-const StyledLink = styled(Link)`
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    font-size: ${({ size = '10px' }) => size};
-    font-weight: 600;
-    font-family: Roboto Slab;
-    color: #F34970;
-    width: ${({ width = '100px' }) => width};
-    height: ${({ height = '30px' }) => height};
-    border: 1px solid #F34970;
-    border-radius: ${({ radius = '12px' }) => radius};
-    margin: ${({ margin = '10px 10px' }) => margin};
-    background-color: #fff;
-    &:hover{
-        cursor: pointer;
-    }
-`;
-
+// const StyledIcon = styled.div`
+//     &:hover{
+//         cursor: pointer;
+//     }
+// `;
 
 const ControlPanelContainer = ({ className }) => {
+    const dispatch = useDispatch();
+    const roleId = useSelector(selectUserRole);
+    const login = useSelector(selectUserLogin);
+    const session = useSelector(selectUserSession);
+    console.log(logout, 'logout')
     return (
         <div className={className}>
             <RightAligned>
-                <StyledLink to="/">Главная</StyledLink>
-                <StyledLink to="/category/:category_id">Категории</StyledLink>
-                <StyledLink to="/basket">Корзина</StyledLink>
-                <StyledLink to="/orders">Заказы</StyledLink>
-                <StyledLink to="/confection">Новое изделие</StyledLink>
-                <StyledLink to="/category">Новая категория</StyledLink>
-                <StyledLink to="/users">Пользователи</StyledLink>
-                <StyledLink size='18px' width='130px' height='40px' margin='4px 20px 0 60px' to="/login">Войти</StyledLink>
+
+                <Link to="/" ><Button>Главная</Button></Link>
+                <Link to="/category/:category_id" ><Button>Категории</Button></Link>
+                <Link to="/basket" ><Button>Корзина</Button></Link>
+                <Link to="/orders"><Button>Заказы</Button></Link>
+                <Link to="/confection" ><Button>Новое изделие</Button></Link>
+                <Link to="/category" ><Button>Новая категория</Button></Link>
+                <Link to="/users" ><Button>Пользователи</Button></Link>
+                {roleId === ROLE.GUEST ?
+                    (
+                        <Link to="/login"><Button size='18px' width='130px' height='40px' margin='4px 20px 0 60px' >Войти</Button></Link>
+                    ) : (
+
+                        <Button onClick={() => dispatch(logout(session))}
+                            size='18px' width='150px' height='40px' margin='4px 20px 0 50px' >{login}
+                            <Icon id="fa-sign-out" size="25px" color="#F34970" margin="3px 0 0 10px" />
+                        </Button>
+
+                    )}
             </RightAligned>
         </div>
     )
 }
-
-
 
 export const ControlPanel = styled(ControlPanelContainer)`
 

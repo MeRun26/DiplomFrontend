@@ -10,7 +10,6 @@ const IconContainer = ({ className, id }) => {
 
 export const Icon = styled(IconContainer)`
     font-size: ${({ size = '20px' }) => size};
-    font-family: ${({ family }) => family};
     color: ${({ color = '#000' }) => color};
     margin: ${({ margin = '0' }) => margin};
 `;

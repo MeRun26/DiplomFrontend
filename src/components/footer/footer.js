@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { Layout } from '../../components';
 
 const FooterContainer = ({ className }) => {
 	const [city, setCity] = useState('');
@@ -20,12 +21,12 @@ const FooterContainer = ({ className }) => {
 
 	return (
 		<div className={className}>
-			<div>
-				<div>TEXT</div>
-				<div>CONTACT@MAIL.RU</div>
-			</div>
-			<div>TEXT</div>
-			<div>
+			<Layout>
+				<div>Sweet_Time@mail.ru</div>
+				<div>Бесплатный звонок+996 (312) 13 26 01</div>
+			</Layout>
+			<Layout size='20px' color='#F34970' height=''>Волшебство в каждомвкусе!</Layout>
+			<Layout>
 				<div>
 					{city},{' '}
 					{new Date().toLocaleString('ru', { day: 'numeric', month: 'long' })}
@@ -33,7 +34,7 @@ const FooterContainer = ({ className }) => {
 				<div>
 					{temperature} градусов, {weather}
 				</div>
-			</div>
+			</Layout>
 		</div>
 	);
 };
@@ -47,5 +48,5 @@ export const Footer = styled(FooterContainer)`
 	padding: 20px 40px;
 	font-weight: bold;
 	background-color: #fff;
-	box-shadow: 0px 2px 12px #F34970;
+	box-shadow: 0px -1px 10px #F34970;
 `;

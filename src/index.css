@@ -2,9 +2,7 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "RobotoSlab";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #FFE4E1;
@@ -14,7 +12,7 @@ html,
 body,
 #root {
   height: 100%;
-  font-family: "RobotoSlab-Regular";
+  font-family: "RobotoSlab";
   src: url("./fonts/Robotoslab/RobotoSlab-Regular.ttf");
   src: url("./fonts/Robotoslab/RobotoSlab-Black.ttf");
   src: url("./fonts/Robotoslab/RobotoSlab-Bold.ttf");
@@ -32,8 +30,17 @@ a {
   text-decoration: none;
 }
 
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-family: Roboto Slab;
+  background-color: #fff;
+}
+
 code {
-  font-family: "RobotoSlab-Regular";
+  font-family: 'RobotoSlab';
 }
 
 @font-face {

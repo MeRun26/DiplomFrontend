@@ -1,29 +1,31 @@
 {
     "users": [
         {
-            "user_id": "001",
+            "id": "001",
             "login": "Miran",
             "password": "qwe123",
             "registered_at": "2001-04-26",
-            "role_id": "0"
+            "role_id": 0
         }
     ],
-
     "roles": [
         {
-            "role_id": "0",
+            "role_id": 0,
             "name": "Админ"
         },
         {
-            "role_id": "1",
+            "role_id": 1,
             "name": "Модер"
         },
         {
-            "role_id": "2",
+            "role_id": 2,
             "name": "Покупатель"
+        },
+        {
+            "role_id": 3,
+            "name": "Гость"
         }
     ],
-
     "categories": [
         {
             "category_id": "001",
@@ -41,7 +43,6 @@
             "category_image": "https://fastly.picsum.photos/id/987/280/150.jpg?hmac=GmPuYaNcCVUZlfNcneHax4jhxltdBSwwvCfGoYnhjH4"
         }
     ],
-    
     "orders": [
         {
             "order_id": "001",
@@ -54,7 +55,6 @@
             "price": "1599"
         }
     ],
-        
     "confections": [
         {
             "confection_id": "001",
@@ -92,5 +92,4 @@
             "price": "1505"
         }
     ]
-    
 }

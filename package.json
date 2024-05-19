@@ -55,5 +55,6 @@
   "description": "<!-- cd frontend  npm run start",
   "main": "index.js",
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "keywords": []
 }

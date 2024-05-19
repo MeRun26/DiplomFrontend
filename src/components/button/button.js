@@ -1,35 +1,43 @@
-import styled from "styled-components";
+// import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-const ButtonContainer = ({ children, className, size, weight, family, color, width, border, radius, margin, background, ...props }) => {
-    return (
-        <button className={className} {...props}>
-            {children}
-        </button>
-    );
+const ButtonContainer = ({ children, className, ...props }) => {
+	return (
+		<button className={className} {...props}>
+			{children}
+		</button>
+	);
 };
 
 export const Button = styled(ButtonContainer)`
-    font-size: ${({ size = '10px' }) => size};
-    font-weight: ${({ weight = '600' }) => weight};
-    font-family: ${({ family = 'Roboto Slab' }) => family};
-    color: ${({ color = '#F34970' }) => color};
+	
+    font-size: ${({ size = '12px' }) => size};
+    color: #F34970;
     width: ${({ width = '100px' }) => width};
-    height: ${({ height = '30px' }) => height};
-    border: ${({ border = '1px solid #F34970' }) => border};
+    height: ${({ height = '35px' }) => height};
+    border: 1px solid #F34970;
     border-radius: ${({ radius = '12px' }) => radius};
-    margin: ${({ margin = '0' }) => margin};
-    background-color: ${({ background = '0' }) => background} ;
+    margin: ${({ margin = '8px 10px' }) => margin};
+
+	&:hover {
+		cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
+	}
 `;
 
-// const Button = styled.button`
-//     font-size: 10px;
-//     font-weight: 600;
-//     font-family: Roboto Slab;
-//     color: #F34970;
-//     width: 100px;
-//     height: 30px;
-//     border: 1px solid #F34970;
-//     border-radius: 12px;
-//     margin-top: 15px;
-//     background-color: #fff;
+// Button.propTypes = {
+// 	children: PropTypes.node.isRequired,
+// 	width: PropTypes.string,
+// };
+
+// export const Button = styled(ButtonContainer)`
+//     font-size: ${({ size = '10px' }) => size};
+//     font-weight: ${({ weight = '600' }) => weight};
+//     font-family: ${({ family = 'Roboto Slab' }) => family};
+//     color: ${({ color = '#F34970' }) => color};
+//     width: ${({ width = '100px' }) => width};
+//     height: ${({ height = '30px' }) => height};
+//     border: ${({ border = '1px solid #F34970' }) => border};
+//     border-radius: ${({ radius = '12px' }) => radius};
+//     margin: ${({ margin = '0' }) => margin};
+//     background-color: ${({ background = '#fff' }) => background} ;
 // `;

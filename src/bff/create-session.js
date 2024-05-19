@@ -1,5 +1,5 @@
 import { removeConfection } from './session/remove-confection'
-import { ROLE } from '../constants';
+import { ROLE } from '../constants/role';
 
 export const createSession = (roleId) => {
     const session = {
