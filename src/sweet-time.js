@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { Footer, Header } from './components';
-import { Authorization } from './pages';
+import { Authorization, Registration } from './pages';
 import styled from 'styled-components';
 
 const AppColumn = styled.div`
@@ -30,7 +30,7 @@ export const SweetTime = () => {
         <Routes>
           <Route path='/' element={<div>MAIN PAGE</div>} />
           <Route path='/login' element={<Authorization />} />
-          <Route path='/register' element={<div>REGISTER PAGE</div>} />
+          <Route path='/register' element={<Registration />} />
           <Route path='/category/:category_id' element={<div>CATEGORY PAGE</div>} />
           <Route path='/category' element={<div>NEW CATEGORY PAGE</div>} />
           <Route path='/confection/:confection_id' element={<div>CONFECTION PAGE</div>} />

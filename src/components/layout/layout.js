@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 const LayoutContainer = ({ children, className, ...props }) => {
     return (
-        <layout className={className} {...props}>
+        <div className={className} {...props}>
             {children}
-        </layout>
+        </div>
     );
 };
 

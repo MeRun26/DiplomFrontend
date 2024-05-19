@@ -1,15 +1,12 @@
-import { useEffect, useState } from 'react';
-import { useDispatch, useStore, useSelector } from 'react-redux';
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, Navigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { server } from '../../bff';
-import {
-	// AuthFormError,
-	Button, H2, Input
-} from '../../components';
-// import { useResetForm } from '../../hooks';
+import { AuthFormError, Button, H2, Input } from '../../components';
+import { useResetForm } from '../../hooks';
 import { setUser } from '../../actions';
 import { selectUserRole } from '../../selectors';
 import { ROLE } from '../../constants';
@@ -37,13 +34,6 @@ const StyledLink = styled(Link)`
 	font-size: 18px;
 `;
 
-const ErrorMessage = styled.div`
-	padding: 10px;
-	margin: 10px 0 0;
-	font-size: 18px;
-	background-color: red;
-`;
-
 const AuthorizationContainer = ({ className }) => {
 	const {
 		register,
@@ -61,26 +51,10 @@ const AuthorizationContainer = ({ className }) => {
 	const [serverError, setServerError] = useState(null);
 
 	const dispatch = useDispatch();
-	const store = useStore();
 
 	const roleId = useSelector(selectUserRole);
 
-	useEffect(() => {
-		let currentWasLogout = store.getState().app.wasLogout;
-
-		return store.subscribe(() => {
-			let prevWasLogout = currentWasLogout;
-			currentWasLogout = store.getState().app.wasLogout;
-
-			if (currentWasLogout !== prevWasLogout) {
-				reset();
-			}
-		});
-
-	}, [reset, store]);
-
-
-	// 	useResetForm(reset);
+	useResetForm(reset);
 
 	const onSubmit = ({ login, password }) => {
 		server.authorize(login, password).then(({ error, res }) => {
@@ -122,8 +96,7 @@ const AuthorizationContainer = ({ className }) => {
 				<Button type="submit" disabled={!!formError} size='36' width='270px' margin='auto' >
 					Авторизоваться
 				</Button>
-				{errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
-				{/* {errorMessage && <AuthFormError>{errorMessage}</AuthFormError>} */}
+				{errorMessage && <AuthFormError>{errorMessage}</AuthFormError>}
 				<StyledLink to="/register">Регистрация</StyledLink>
 			</form>
 		</div>
