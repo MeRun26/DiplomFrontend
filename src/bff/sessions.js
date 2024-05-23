@@ -16,6 +16,12 @@ export const sessions = {
 		delete this.list[hash];
 	},
 
+	access(hash, accessRoles) {
+		const user = this.list[hash];
+
+		return !!user && accessRoles.includes(user.roleId);
+	}
+
 	// async remove(hash) {
 	// 	const session = await getSession(hash);
 

@@ -57,6 +57,7 @@ const RegistrationContainer = ({ className }) => {
     const onSubmit = ({ login, password }) => {
         server.register(login, password).then(({ error, res }) => {
             if (error) {
+                console.log(res, 'res')
                 setServerError(`Ошибка запроса: ${error}`);
                 return;
             }
@@ -98,7 +99,7 @@ const RegistrationContainer = ({ className }) => {
                         onChange: () => setServerError(null),
                     })}
                 />
-                <Button type="submit" disabled={!!formError} size='36' width='270px' margin='auto' >
+                <Button type="submit" to="/register" disabled={!!formError} size='36' width='270px' margin='auto' >
                     Зарегистрироваться
                 </Button>
                 {errorMessage && <AuthFormError>{errorMessage}</AuthFormError>}

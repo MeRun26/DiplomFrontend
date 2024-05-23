@@ -19,6 +19,6 @@ const reducer = combineReducers({
 	orders: ordersReducer
 });
 
-const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENTION_COMPOSE__ || compose;
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENTION_COMPOSE__ || compose;
 
-export const store = createStore(reducer, composeEnhancer(applyMiddleware(thunk)));
+export const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));

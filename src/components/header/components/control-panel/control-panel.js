@@ -1,27 +1,37 @@
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux';
-import styled from "styled-components";
 import { Button, Icon } from '../../../../components';
 import { selectUserRole, selectUserLogin, selectUserSession } from '../../../../selectors';
 import { ROLE } from '../../../../constants';
 import { logout } from '../../../../actions';
+import styled from "styled-components";
 
 const RightAligned = styled.div`
     display: flex;
     justify-content: flex-end;
 `;
 
-// const StyledIcon = styled.div`
-//     &:hover{
-//         cursor: pointer;
-//     }
-// `;
+
 
 const ControlPanelContainer = ({ className }) => {
     const dispatch = useDispatch();
     const roleId = useSelector(selectUserRole);
     const login = useSelector(selectUserLogin);
     const session = useSelector(selectUserSession);
+
+    const getRoleIcon = (roleId) => {
+        switch (roleId) {
+            case ROLE.ADMIN:
+                return <Icon id="fa-user-secret" size="20px" color="#F34970" margin="14px 0 0 40px" />;
+            case ROLE.MODER:
+                return <Icon id="fa-user-circle" size="20px" color="#F34970" margin="14px 0 0 40px" />;
+            case ROLE.CLIENT:
+                return <Icon id="fa-user" size="20px" color="#F34970" margin="14px 0 0 40px" />;
+            default:
+                return null;
+        }
+    };
+
     return (
         <div className={className}>
             <RightAligned>
@@ -35,17 +45,23 @@ const ControlPanelContainer = ({ className }) => {
                 <Link to="/users" ><Button>Пользователи</Button></Link>
                 {roleId === ROLE.GUEST ?
                     (
-                        <Link to="/login"><Button size='18px' width='130px' height='40px' margin='4px 20px 0 60px' >Войти</Button></Link>
+                        <>
+                            <Icon id="fa-user-o" size="20px" color="#F34970" margin="15px 0 0 50px" />
+                            <Link to="/login">
+                                <Button size='18px' width='130px' height='40px' margin='4px 20px 0 10px' >Войти</Button>
+                            </Link>
+                        </>
                     ) : (
-
-                        <Button onClick={() => dispatch(logout(session))}
-                            size='18px' width='150px' height='40px' margin='4px 20px 0 50px' >{login}
-                            <Icon id="fa-sign-out" size="25px" color="#F34970" margin="3px 0 0 10px" />
-                        </Button>
-
+                        <>
+                            {getRoleIcon(roleId)}
+                            <Button onClick={() => dispatch(logout(session))}
+                                size='18px' width='150px' height='40px' margin='4px 20px 0 10px' >{login}
+                                <Icon id="fa-sign-out" size="25px" color="#F34970" margin="3px 0 0 10px" />
+                            </Button>
+                        </>
                     )}
             </RightAligned>
-        </div>
+        </div >
     )
 }
 

@@ -10,26 +10,68 @@
     {
       "login": "Liza",
       "password": "qwe123",
-      "registred_at": "2024-05-19",
+      "registered_at": "2024-05-19",
       "role_id": 2,
       "id": "J73vw0i"
+    },
+    {
+      "login": "Petr",
+      "password": "qwe123",
+      "registered_at": "2024-05-20",
+      "role_id": 1,
+      "id": "Tf-RteW"
+    },
+    {
+      "login": "ivan2",
+      "password": "qwe123",
+      "registered_at": "2024-05-22",
+      "role_id": 2,
+      "id": "NW9V-SR"
+    },
+    {
+      "login": "ivan3",
+      "password": "qwe123",
+      "registered_at": "2024-05-22",
+      "role_id": 2,
+      "id": "yyTgP9K"
+    },
+    {
+      "login": "Miran123",
+      "password": "qwe123",
+      "registered_at": "2024-05-23",
+      "role_id": 2,
+      "id": "unc_aa_"
+    },
+    {
+      "login": "Miran2",
+      "password": "qweqwe",
+      "registered_at": "2024-05-23",
+      "role_id": 2,
+      "id": "uRY2-YN"
+    },
+    {
+      "login": "Petr2",
+      "password": "qwe123",
+      "registered_at": "2024-05-23",
+      "role_id": 2,
+      "id": "mTPs55V"
     }
   ],
   "roles": [
     {
-      "role_id": 0,
+      "id": 0,
       "name": "Админ"
     },
     {
-      "role_id": 1,
+      "id": 1,
       "name": "Модер"
     },
     {
-      "role_id": 2,
-      "name": "Покупатель"
+      "id": 2,
+      "name": "Клиент"
     },
     {
-      "role_id": 3,
+      "id": 3,
       "name": "Гость"
     }
   ],
@@ -60,6 +102,16 @@
       "adress": "Aitmatov 66a",
       "count": "5",
       "price": "1599"
+    },
+    {
+      "order_id": "002",
+      "user_id": "001",
+      "confection_id": "002",
+      "ordered_at": "2024-10-11",
+      "busket_id": "1",
+      "adress": "Aitmatov 66a",
+      "count": "3",
+      "price": "159"
     }
   ],
   "confections": [

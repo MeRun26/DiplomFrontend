@@ -57,16 +57,16 @@ https://picsum.photos/280/150
 ],
 "roles": [
 {
-"role_id": "0",
+"id": "0",
 "name": "Админ"
 },
 {
-"role_id": "1",
+"id": "1",
 "name": "Модер"
 },
 {
-"role_id": "2",
-"name": "Покупатель"
+"id": "2",
+"name": "Клиент"
 }
 ],
 "categories": [

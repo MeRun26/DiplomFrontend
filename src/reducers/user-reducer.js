@@ -16,7 +16,6 @@ export const userReducer = (state = initialUserState, action) => {
             return {
                 ...state,
                 ...action.payload,
-                roleId: action.payload.role_id, // Обновление roleId
             };
         case ACTION_TYPE.LOGOUT:
             return initialUserState;

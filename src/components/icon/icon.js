@@ -12,4 +12,5 @@ export const Icon = styled(IconContainer)`
     font-size: ${({ size = '20px' }) => size};
     color: ${({ color = '#000' }) => color};
     margin: ${({ margin = '0' }) => margin};
+    /* color: ${({ disabled }) => disabled ? '#ccc' : '#000'}; */
 `;

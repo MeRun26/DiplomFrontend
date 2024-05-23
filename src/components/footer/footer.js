@@ -25,7 +25,7 @@ const FooterContainer = ({ className }) => {
 				<div>Sweet_Time@mail.ru</div>
 				<div>Бесплатный звонок+996 (312) 13 26 01</div>
 			</Layout>
-			<Layout size='20px' color='#F34970' height=''>Волшебство в каждомвкусе!</Layout>
+			<Layout size='20px' color='#F34970' height=''>Волшебство в каждом вкусе!</Layout>
 			<Layout>
 				<div>
 					{city},{' '}

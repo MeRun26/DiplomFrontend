@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { Footer, Header } from './components';
-import { Authorization, Registration } from './pages';
+import { Authorization, Registration, Users } from './pages';
 import styled from 'styled-components';
 
 const AppColumn = styled.div`
@@ -14,7 +14,7 @@ const AppColumn = styled.div`
   background-color: #FFF;
 `;
 
-const Content = styled.div`
+const Page = styled.div`
   padding: 120px;
 `;
 
@@ -26,19 +26,19 @@ export const SweetTime = () => {
   return (
     <AppColumn>
       <Header />
-      <Content>
+      <Page>
         <Routes>
-          <Route path='/' element={<div>MAIN PAGE</div>} />
+          <Route path='/' element={<div>ГЛАВНАЯ СТРАНИЦА</div>} />
           <Route path='/login' element={<Authorization />} />
           <Route path='/register' element={<Registration />} />
-          <Route path='/category/:category_id' element={<div>CATEGORY PAGE</div>} />
-          <Route path='/category' element={<div>NEW CATEGORY PAGE</div>} />
-          <Route path='/confection/:confection_id' element={<div>CONFECTION PAGE</div>} />
-          <Route path='/confection' element={<div>NEW CONFECTION PAGE</div>} />
-          <Route path='/users' element={<div>USERS PAGE</div>} />
-          <Route path='/basket' element={<div>BASKET PAGE</div>} />
-          <Route path='/orders' element={<div>ORDERS PAGE</div>} />
-          <Route path='*' element={<div>ERROR PAGE</div>} />
+          <Route path='/users' element={<Users />} />
+          <Route path='/category/:category_id' element={<div>СТРАНИЦА КАТЕГОРИИ</div>} />
+          <Route path='/category' element={<div>СТРАНИЦА НОВОЙ КАТЕГОРИИ</div>} />
+          <Route path='/confection/:confection_id' element={<div>СТРАНИЦА ИЗДЕЛИЯ</div>} />
+          <Route path='/confection' element={<div>СТРАНИЦА НОВОГО ИЗДЕЛИЯ</div>} />
+          <Route path='/basket' element={<div>СТРАНИЦА КОРЗИНЫ</div>} />
+          <Route path='/orders' element={<div>СТРАНИЦА ЗАКАЗОВ</div>} />
+          <Route path='*' element={<div>СТРАНИЦА ОШИБОК</div>} />
         </Routes>
         {/*         
        // Страницы:
@@ -52,7 +52,7 @@ export const SweetTime = () => {
       // 8)Новое изделие(создание)
       // 9)Новая категория(создание)
       // 10)Пользователи(управление) */}
-      </Content>
+      </Page>
       <Footer />
     </AppColumn>
   );
