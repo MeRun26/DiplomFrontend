@@ -77,7 +77,7 @@ export const ControlPanel = styled(ControlPanelContainer)`
     border: ${({ border = '1px solid #F34970' }) => border};
     border-radius: ${({ radius = '12px' }) => radius};
     margin: ${({ margin = '0' }) => margin};
-    background-color: ${({ background = '0' }) => background} ;
+    background-color: ${({ background = '0' }) => background};
 `; */
 
 // buttons

@@ -1,5 +1,11 @@
-import { Icon } from "../../../../components";
 import styled from "styled-components";
+import logo from '../../../../logo/logo.png';
+
+const LogoImage = styled.img`
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+`;
 
 const LogoText = styled.div`
     font-size: 25px;
@@ -12,7 +18,7 @@ const LogoText = styled.div`
 
 const LogoContainer = ({ className }) => (
     <div className={className}>
-        <Icon id="fa-birthday-cake" size="36px" color="#F34970" margin="2px 0 0 20px" />
+        <LogoImage src={logo} alt="Logo" />
         <div>
             <LogoText>Sweet-Time</LogoText>
         </div>

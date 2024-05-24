@@ -16,6 +16,8 @@ export const userReducer = (state = initialUserState, action) => {
             return {
                 ...state,
                 ...action.payload,
+                roleId: action.payload.role_id, // Ensure role_id is mapped to roleId GPT
+
             };
         case ACTION_TYPE.LOGOUT:
             return initialUserState;
