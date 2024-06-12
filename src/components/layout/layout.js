@@ -17,4 +17,6 @@ export const Layout = styled(LayoutContainer)`
     width: ${({ width = '100%' }) => width};
     height: ${({ height = '100%' }) => height};
     margin: ${({ margin = 'auto' }) => margin};
+    border: ${({ border = 'none' }) => border};
+    border-radius: ${({ radius = '0px' }) => radius};
 `;

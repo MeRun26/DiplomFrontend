@@ -4,7 +4,7 @@ import { ROLE } from '../constants'
 const initialUserState = {
     id: null,
     login: null,
-    basket: null,
+    cart: null,
     orders: null,
     roleId: ROLE.GUEST,
     session: null,
@@ -16,7 +16,7 @@ export const userReducer = (state = initialUserState, action) => {
             return {
                 ...state,
                 ...action.payload,
-                roleId: action.payload.role_id, // Ensure role_id is mapped to roleId GPT
+                roleId: action.payload.roleId, // Ensure roleId is mapped to roleId GPT
 
             };
         case ACTION_TYPE.LOGOUT:

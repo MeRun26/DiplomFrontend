@@ -4,7 +4,7 @@ import logo from '../../../../logo/logo.png';
 const LogoImage = styled.img`
     width: 50px;
     height: 50px;
-    margin-left: 20px;
+    margin-left: 50px;
 `;
 
 const LogoText = styled.div`

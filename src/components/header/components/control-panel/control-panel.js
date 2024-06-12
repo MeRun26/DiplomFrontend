@@ -10,23 +10,25 @@ const RightAligned = styled.div`
     display: flex;
     justify-content: flex-end;
 `;
-
-
-
 const ControlPanelContainer = ({ className }) => {
     const dispatch = useDispatch();
     const roleId = useSelector(selectUserRole);
     const login = useSelector(selectUserLogin);
     const session = useSelector(selectUserSession);
 
+    // const onLogout = () => {
+    // 	dispatch(logout(session));
+    // 	sessionStorage.removeItem('userData');
+    // };
+
     const getRoleIcon = (roleId) => {
         switch (roleId) {
             case ROLE.ADMIN:
-                return <Icon id="fa-user-secret" size="20px" color="#F34970" margin="14px 0 0 40px" />;
+                return <Icon id="fa-user-secret" size="20px" color="#F34970" margin="14px 0 0 115px" />;
             case ROLE.MODER:
-                return <Icon id="fa-user-circle" size="20px" color="#F34970" margin="14px 0 0 40px" />;
+                return <Icon id="fa-user-circle" size="20px" color="#F34970" margin="14px 0 0 115px" />;
             case ROLE.CLIENT:
-                return <Icon id="fa-user" size="20px" color="#F34970" margin="14px 0 0 40px" />;
+                return <Icon id="fa-user" size="20px" color="#F34970" margin="14px 0 0 115px" />;
             default:
                 return null;
         }
@@ -37,8 +39,8 @@ const ControlPanelContainer = ({ className }) => {
             <RightAligned>
 
                 <Link to="/" ><Button>Главная</Button></Link>
-                <Link to="/category/:category_id" ><Button>Категории</Button></Link>
-                <Link to="/basket" ><Button>Корзина</Button></Link>
+                <Link to="/category/:categoryId" ><Button>Категории</Button></Link>
+                <Link to="/cart/:cartId" ><Button>Корзина</Button></Link>
                 <Link to="/orders"><Button>Заказы</Button></Link>
                 <Link to="/confection" ><Button>Новое изделие</Button></Link>
                 <Link to="/category" ><Button>Новая категория</Button></Link>
@@ -46,16 +48,18 @@ const ControlPanelContainer = ({ className }) => {
                 {roleId === ROLE.GUEST ?
                     (
                         <>
-                            <Icon id="fa-user-o" size="20px" color="#F34970" margin="15px 0 0 50px" />
+                            <Icon id="fa-user-o" size="20px" color="#F34970" margin="15px 0 0 130px" />
                             <Link to="/login">
-                                <Button size='18px' width='130px' height='40px' margin='4px 20px 0 10px' >Войти</Button>
+                                <Button size='18px' width='130px' height='40px' margin='4px 50px 0 10px' >Войти</Button>
                             </Link>
                         </>
                     ) : (
                         <>
+
                             {getRoleIcon(roleId)}
+
                             <Button onClick={() => dispatch(logout(session))}
-                                size='18px' width='150px' height='40px' margin='4px 20px 0 10px' >{login}
+                                size='18px' width='150px' height='40px' margin='4px 50px 0 10px' >{login}
                                 <Icon id="fa-sign-out" size="25px" color="#F34970" margin="3px 0 0 10px" />
                             </Button>
                         </>
@@ -68,7 +72,11 @@ const ControlPanelContainer = ({ className }) => {
 export const ControlPanel = styled(ControlPanelContainer)`
 
 `;
-/* font-size: ${({ size = '10px' }) => size};
+
+
+/* 
+buttons
+    font-size: ${({ size = '10px' }) => size};
     font-weight: ${({ weight = '600' }) => weight};
     font-family: ${({ family = 'Roboto Slab' }) => family};
     color: ${({ color = '#F34970' }) => color};
@@ -78,18 +86,17 @@ export const ControlPanel = styled(ControlPanelContainer)`
     border-radius: ${({ radius = '12px' }) => radius};
     margin: ${({ margin = '0' }) => margin};
     background-color: ${({ background = '0' }) => background};
-`; */
+`; 
 
-// buttons
-// const Button = styled.button`
-//     font-size: 18px;
-//     font-weight: 600;
-//     font-family: Roboto Slab;
-//     color: #F34970;
-//     width: 130px;
-//     height: 40px;
-//     margin: 7px 0 0 25px;
-//     border: 1px solid #F34970;
-//     border-radius: 12px;
-//     background-color: #fff;
-// `;
+const Button = styled.button`
+    font-size: 18px;
+    font-weight: 600;
+    font-family: Roboto Slab;
+    color: #F34970;
+    width: 130px;
+    height: 40px;
+    margin: 7px 0 0 25px;
+    border: 1px solid #F34970;
+    border-radius: 12px;
+    background-color: #fff;
+`;*/

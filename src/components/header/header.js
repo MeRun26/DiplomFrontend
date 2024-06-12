@@ -13,9 +13,10 @@ export const Header = styled(HeaderContainer)`
   justify-content: space-between;
   position: fixed;
   top: 0;
-  width: 1310px;
+  width: 100%;
   height: 50px;
-  padding: 20px 20px;
+  padding: 20px 0px;
   background-color: #fff;
   box-shadow: 0px 1px 10px #F34970;
+  z-index: 10;
 `;

@@ -19,7 +19,6 @@ const UserRowContainer = ({
 	const [initialRoleId, setInitialRoleId] = useState(userRoleId);
 	const [selectedRoleId, setSelectedRoleId] = useState(userRoleId);
 	const requestServer = useServerRequest();
-	// const dispatch = useDispatch();
 
 	const onRoleChange = ({ target }) => {
 		setSelectedRoleId(Number(target.value));
@@ -51,8 +50,7 @@ const UserRowContainer = ({
 					<Icon
 						id="fa fa-floppy-o"
 						margin="0 0 0 10px"
-						color={({ disabled }) => disabled ? '#ccc' : '#000'}
-						disabled={isButtonDisabled}
+						color={() => isButtonDisabled ? '#ccc' : '#000'}
 						onClick={() => onRoleSave(id, selectedRoleId)}
 					/>
 				</div>

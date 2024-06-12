@@ -6,7 +6,13 @@ import {
 } from 'redux';
 import { thunk } from 'redux-thunk';
 import {
-	appReducer, userReducer, usersReducer, confectionReducer, categoryReducer, basketReducer, ordersReducer
+	appReducer,
+	userReducer,
+	usersReducer,
+	confectionReducer,
+	categoryReducer,
+	cartReducer,
+	ordersReducer
 } from './reducers'
 
 const reducer = combineReducers({
@@ -15,10 +21,10 @@ const reducer = combineReducers({
 	users: usersReducer,
 	confection: confectionReducer,
 	category: categoryReducer,
-	basket: basketReducer,
+	cart: cartReducer,
 	orders: ordersReducer
 });
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENTION_COMPOSE__ || compose;
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENTION_COMPOSE__ || compose;
 
-export const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
+export const store = createStore(reducer, composeEnhancer(applyMiddleware(thunk)));

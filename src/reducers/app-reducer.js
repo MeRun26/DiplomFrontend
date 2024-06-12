@@ -2,7 +2,7 @@ import { ACTION_TYPE } from '../actions';
 // import { ROLE } from '../constants';
 
 const initialAppState = {
-    // wasLogout: false,
+    wasLogout: false,
 };
 
 export const appReducer = (state = initialAppState, action) => {

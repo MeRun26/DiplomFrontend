@@ -1,5 +1,5 @@
 export * from './app-reducer'
-export * from './basket-reducer'
+export * from './cart-reducer'
 export * from './category-reducer'
 export * from './confection-reducer'
 export * from './orders-reducer'

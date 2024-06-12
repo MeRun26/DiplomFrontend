@@ -4,7 +4,7 @@
 const initialOrdersState = {
     // id: null,
     // login: null,
-    // basket: null,
+    // cart: null,
     // orders: null,
     // roleId: ROLE.GUEST,
     // session: null,

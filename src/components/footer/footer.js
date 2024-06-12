@@ -43,9 +43,9 @@ export const Footer = styled(FooterContainer)`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	width: 1270px;
+	width: 100%;
 	height: 50px;
-	padding: 20px 40px;
+	padding: 20px 0px;
 	font-weight: bold;
 	background-color: #fff;
 	box-shadow: 0px -1px 10px #F34970;

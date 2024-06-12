@@ -29,7 +29,7 @@ https://picsum.photos/280/150
 - роли - roles: role_id / name
 - категории - categories: category_id / name / category_image
 - изделия - confections: confection_id / name / confection_image / description / price
-- корзина - basket: basket_id / user_id / confection_id / count / price
+- корзина - cart: cart_id / user_id / confection_id / count / price
 - заказы - orders: order_id / user_id / confection_id / ordered_at / address / count / price
 
 Схема состояние на BFF:
@@ -40,10 +40,10 @@ https://picsum.photos/280/150
 
 - user: user_id / login / roleId
 - categories: массив confection: category_id / name / imageUrl
-- confection: confection_id / name / imageUrl / description / price / basket: массив basket: basket_id / count
-- basket: basket_id / count / price / confections: массив confection: confection_id / name / imageUrl / price
+- confection: confection_id / name / imageUrl / description / price / cart: массив cart: cart_id / count
+- cart: cart_id / count / price / confections: массив confection: confection_id / name / imageUrl / price
 - users: массив user: user_id / login / registeredAt / role
-- orders: price / basket: массив basket: basket_id / count
+- orders: price / cart: массив cart: cart_id / count
 
 {
 "users": [
@@ -93,7 +93,7 @@ https://picsum.photos/280/150
     		"user_id": "001",
     		"confection_id": "001",
     		"ordered_at": "2024-10-10",
-    		"busket_id": "1",
+    		"cart_id": "1",
     		"adress": "Aitmatov 66a",
     		"count": "5",
     		"price": "1599"
