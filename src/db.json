@@ -119,17 +119,31 @@
   "carts": [
     {
       "id": "001",
-      "user_id": "001",
-      "confection_id": "001",
-      "count": "9",
-      "price": "1599"
+      "userId": "001",
+      "items": [
+        {
+          "confectionId": "001",
+          "count": "2"
+        },
+        {
+          "confectionId": "002",
+          "count": "1"
+        }
+      ]
     },
     {
       "id": "002",
-      "user_id": "001",
-      "confection_id": "002",
-      "count": "5",
-      "price": "1500"
+      "userId": "002",
+      "items": [
+        {
+          "confectionId": "001",
+          "count": "22"
+        },
+        {
+          "confectionId": "002",
+          "count": "11"
+        }
+      ]
     }
   ]
 }
