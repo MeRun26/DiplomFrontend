@@ -15,6 +15,7 @@ const ConfectionContainer = ({ className }) => {
 	const dispatch = useDispatch();
 	const params = useParams();
 	const requestServer = useServerRequest()
+	console.log(confection, 'TOVAR')
 	// 	const [error, setError] = useState(null);
 	// 	const [isLoading, setIsLoading] = useState(true);
 	// 	const isCreating = !!useMatch('/post');

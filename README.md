@@ -21,16 +21,17 @@ https://picsum.photos/280/150
 - роль пользователя: БД (список ролей), BFF (сессия пользователя с ролью), стор (отображение в браузере)
 - категории: БД (список категорий), стор(отображение в браузере)
 - изделия: БД (список изделий), стор(отображение в браузере)
-- корзина: БД (список товаров), стор (отображение в браузере)
+- корзина: БД (список изделий), стор(отображение в браузере)
+- заказы: БД (список заказов), стор(отображение в браузере)
 
 Таблицы БД:
 
-- пользователи - users: user_id / login / password / registered_at / role_id
-- роли - roles: role_id / name
-- категории - categories: category_id / name / category_image
-- изделия - confections: confection_id / name / confection_image / description / price
-- корзина - cart: cart_id / user_id / confection_id / count / price
-- заказы - orders: order_id / user_id / confection_id / ordered_at / address / count / price
+- пользователи - users: id / login / password / registered_at / role_id
+- роли - roles: id / name
+- категории - categories: id / name / category_image
+- изделия - confections: id / name / confection_image / description / price
+- корзина - cart: id / user_id / confection_id / count / price
+- заказы - orders: id / user_id / confection_id / ordered_at / address / count / price
 
 Схема состояние на BFF:
 

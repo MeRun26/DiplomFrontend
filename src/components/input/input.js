@@ -9,13 +9,13 @@ export const InputContainer = forwardRef(({ className, width, ...props }, ref) =
 
 export const Input = styled(InputContainer)`
 	width: ${({ width = '100%' }) => width};
-	height: 40px;
+	height: 35px;
 	margin: 0 0 10px;
-	padding: 10px;
+	padding: 5px 10px;
 	font-size: 18px;
     font-family: ${({ family = 'Roboto Slab' }) => family};
 	border: 1px solid #000;
-	border-radius: 20px;
+	border-radius: 15px;
 	opacity: 60%;
 `;
 
