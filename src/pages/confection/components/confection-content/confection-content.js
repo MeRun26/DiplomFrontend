@@ -34,13 +34,13 @@ const ConfectionContentContainer = ({
 			<div className='confection-text'>{description}</div>
 
 			<hr />
-			<div className="cofection-property">
+			{/* <div className="cofection-property">
 				<div>Categories: </div>
 				<div>Weight: </div>
 				<div>Box: </div>
 			</div>
 
-			<hr />
+			<hr /> */}
 
 			{/* <SpecialPanel
 				id={confection_id}

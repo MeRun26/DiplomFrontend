@@ -15,7 +15,6 @@ const ConfectionContainer = ({ className }) => {
 	const dispatch = useDispatch();
 	const params = useParams();
 	const requestServer = useServerRequest()
-	console.log(confection, 'TOVAR')
 	// 	const [error, setError] = useState(null);
 	// 	const [isLoading, setIsLoading] = useState(true);
 	// 	const isCreating = !!useMatch('/post');
@@ -39,6 +38,7 @@ const ConfectionContainer = ({ className }) => {
 
 	return (
 		<div className={className}>
+			{/* <SearchByName /> */}
 			<ConfectionContent confection={confection} />
 			<CartForm /*carts={carts}/>*/ />
 		</div>
