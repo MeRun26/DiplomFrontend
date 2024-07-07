@@ -94,6 +94,24 @@
       "price": "1505 ⃀"
     }
   ],
+  "carts": [
+    {
+    },
+    {
+      "id": "001",
+      "userId": "001",
+      "items": [
+        {
+          "confectionId": "001",
+          "count": "22"
+        },
+        {
+          "confectionId": "002",
+          "count": "11"
+        }
+      ]
+    }
+  ],
   "orders": [
     {
       "id": "001",
@@ -114,36 +132,6 @@
       "adress": "Aitmatov 66a",
       "count": "3",
       "price": "159"
-    }
-  ],
-  "carts": [
-    {
-      "id": "001",
-      "userId": "001",
-      "items": [
-        {
-          "confectionId": "001",
-          "count": "2"
-        },
-        {
-          "confectionId": "002",
-          "count": "1"
-        }
-      ]
-    },
-    {
-      "id": "002",
-      "userId": "002",
-      "items": [
-        {
-          "confectionId": "001",
-          "count": "22"
-        },
-        {
-          "confectionId": "002",
-          "count": "11"
-        }
-      ]
     }
   ]
 }
