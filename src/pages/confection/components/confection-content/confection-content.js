@@ -35,7 +35,7 @@ const ConfectionContentContainer = ({
 
 			<hr />
 			{/* <div className="cofection-property">
-				<div>Categories: </div>
+				<div>Category: </div>
 				<div>Weight: </div>
 				<div>Box: </div>
 			</div>

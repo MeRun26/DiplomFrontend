@@ -32,10 +32,10 @@ export const SweetTime = () => {
           <Route path='/login' element={<Authorization />} />
           <Route path='/register' element={<Registration />} />
           <Route path='/users' element={<Users />} />
-          <Route path='/categories/:categoryId' element={<div>СТРАНИЦА КАТЕГОРИИ</div>} />
           <Route path='/category' element={<div>СТРАНИЦА НОВОЙ КАТЕГОРИИ</div>} />
-          <Route path='/confections/:confectionId' element={<Confection />} />
+          <Route path='/category/:categoryId' element={<div>СТРАНИЦА КАТЕГОРИИ</div>} />
           <Route path='/confection' element={<div>СТРАНИЦА НОВОГО ИЗДЕЛИЯ</div>} />
+          <Route path='/confection/:confectionId' element={<Confection />} />
           <Route path='/carts/:cartId' element={<Cart />} />
           <Route path='*' element={<div>СТРАНИЦА ОШИБОК</div>} />
         </Routes>
