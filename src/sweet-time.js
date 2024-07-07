@@ -37,7 +37,6 @@ export const SweetTime = () => {
           <Route path='/confections/:confectionId' element={<Confection />} />
           <Route path='/confection' element={<div>СТРАНИЦА НОВОГО ИЗДЕЛИЯ</div>} />
           <Route path='/carts/:cartId' element={<Cart />} />
-          <Route path='/orders' element={<div>СТРАНИЦА ЗАКАЗОВ</div>} />
           <Route path='*' element={<div>СТРАНИЦА ОШИБОК</div>} />
         </Routes>
 

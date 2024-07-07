@@ -41,7 +41,6 @@ const ControlPanelContainer = ({ className }) => {
                 <Link to="/" ><Button>Главная</Button></Link>
                 <Link to="/category/:categoryId" ><Button>Категории</Button></Link>
                 <Link to="/cart/:cartId" ><Button>Корзина</Button></Link>
-                <Link to="/orders"><Button>Заказы</Button></Link>
                 <Link to="/confection" ><Button>Новое изделие</Button></Link>
                 <Link to="/category" ><Button>Новая категория</Button></Link>
                 <Link to="/users" ><Button>Пользователи</Button></Link>

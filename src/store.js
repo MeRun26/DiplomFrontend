@@ -12,7 +12,6 @@ import {
 	confectionReducer,
 	categoryReducer,
 	cartReducer,
-	ordersReducer
 } from './reducers'
 
 const reducer = combineReducers({
@@ -22,7 +21,6 @@ const reducer = combineReducers({
 	confection: confectionReducer,
 	category: categoryReducer,
 	cart: cartReducer,
-	orders: ordersReducer
 });
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENTION_COMPOSE__ || compose;

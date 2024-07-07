@@ -5,7 +5,6 @@ const initialUserState = {
     id: null,
     login: null,
     cart: null,
-    orders: null,
     roleId: ROLE.GUEST,
     session: null,
 };

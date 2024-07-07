@@ -111,27 +111,5 @@
         }
       ]
     }
-  ],
-  "orders": [
-    {
-      "id": "001",
-      "user_id": "001",
-      "confection_id": "001",
-      "ordered_at": "2024-10-10",
-      "cart_id": "1",
-      "adress": "Aitmatov 66a",
-      "count": "5",
-      "price": "1599"
-    },
-    {
-      "id": "002",
-      "user_id": "001",
-      "confection_id": "002",
-      "ordered_at": "2024-10-11",
-      "cart_id": "1",
-      "adress": "Aitmatov 66a",
-      "count": "3",
-      "price": "159"
-    }
   ]
 }

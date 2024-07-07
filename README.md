@@ -23,7 +23,6 @@ https://picsum.photos/280/150
 - категория: БД (список категорий), стор(отображение в браузере)
 - изделие: БД (список изделий), стор(отображение в браузере)
 - корзина: БД (список корзин), стор(отображение в браузере)
-- заказ: БД (список заказов), стор(отображение в браузере)
 
 Таблицы БД:
 
@@ -32,7 +31,6 @@ https://picsum.photos/280/150
 - категории - categories: id / name / category_image
 - изделия - confections: id / name / confection_image / description / price
 - корзина - cart: id / user_id / confection_id / count / price
-- заказы - orders: id / user_id / confection_id / ordered_at / address / count / price
 
 Схема состояние на BFF:
 
@@ -40,12 +38,12 @@ https://picsum.photos/280/150
 
 Схема для редакс стора (на клиенте):
 
-- user: user_id / login / roleId
-- categories: массив confection: category_id / name / imageUrl
-- confection: confection_id / name / imageUrl / description / price / cart: массив cart: cart_id / count
-- cart: cart_id / count / price / confections: массив confection: confection_id / name / imageUrl / price
-- users: массив user: user_id / login / registeredAt / role
-- orders: price / cart: массив cart: cart_id / count
+- user: userId / login / roleId
+- categories: categoryId / name 
+- confections: массив confection: confectionId / name / confectionImage / price
+- confection: confectionId / name / imageUrl / description / price / cart: массив cart: cartId / count
+- carts: cartId / count / totalPrice / confections: массив confection: confectionId / name / imageUrl / price
+- users: массив user: userId / login / registeredAt / role
 
 {
 "users": [
@@ -89,18 +87,6 @@ https://picsum.photos/280/150
 }
 ],
 
-    "orders": [
-    	{
-    		"order_id": "001",
-    		"user_id": "001",
-    		"confection_id": "001",
-    		"ordered_at": "2024-10-10",
-    		"cart_id": "1",
-    		"adress": "Aitmatov 66a",
-    		"count": "5",
-    		"price": "1599"
-    	}
-    ],
     "confections": [
     	{
     		"confection_id": "001",
