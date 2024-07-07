@@ -39,8 +39,7 @@ https://picsum.photos/280/150
 Схема для редакс стора (на клиенте):
 
 - user: userId / login / roleId
-- categories: categoryId / name 
-- confections: массив confection: confectionId / name / confectionImage / price
+- categories: categoryId / name / массив confection: confectionId / name / confectionImage / price
 - confection: confectionId / name / imageUrl / description / price / cart: массив cart: cartId / count
 - carts: cartId / count / totalPrice / confections: массив confection: confectionId / name / imageUrl / price
 - users: массив user: userId / login / registeredAt / role
