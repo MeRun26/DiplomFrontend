@@ -1,12 +1,12 @@
-import { useState } from 'react';
+import { useState } from "react";
 // import PropTypes from 'prop-types';
 // import { useDispatch/*, useSelector*/ } from 'react-redux';
-import { Button, Layout } from '../../../../components';
+import { Button, Layout } from "../../../../components";
 // import { Comment } from './components';
 // import { selectUserRole } from '../../../../selectors';
 // import { addCartAsync } from '../../../../actions';
 // import { PROP_TYPE, ROLE } from '../../../../constants';
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const CartFormContainer = ({ className, cart, confectionId }) => {
 	const [count, setCount] = useState(1);
@@ -26,52 +26,77 @@ const CartFormContainer = ({ className, cart, confectionId }) => {
 				size="20px"
 				border="1px solid #000"
 				radius="12px"
-				margin="0 0 20px"
+				margin="auto"
 				height="48px"
 				width="50px"
-			>{count}</Layout>
+			>
+				{count}
+			</Layout>
 			<div>
 				<Button
 					size="20px"
 					width="30px"
 					height="25px"
-					margin="0 0 0 10px"
+					margin="auto"
 					onClick={() => setCount((prev) => prev + 1)}
-
-				>+</Button>
+				>
+					+
+				</Button>
 				<Button
 					size="20px"
 					width="30px"
 					height="25px"
-					margin="0 0 0 10px"
-					onClick={() => setCount((prev) => prev <= 1 ? prev : prev - 1)}
-				>-</Button>
+					margin="auto"
+					onClick={() => setCount((prev) => (prev <= 1 ? prev : prev - 1))}
+				>
+					-
+				</Button>
 			</div>
 
 			<Button
 				id="fa-paper-plane-o"
-				margin="0 0 0 10px"
+				margin="auto"
 				size="20px"
 				radius="20px"
 				// width="150px"
 				height="50px"
-			// onClick={() => addToCart(confectionId, count)}
+				// onClick={() => addToCart(confectionId, count)}
 			>
 				Add to Cart
 			</Button>
+			<Button
+				id="fa-paper-plane-o"
+				margin="auto"
+				size="20px"
+				radius="20px"
+				// width="150px"
+				height="50px"
+				// onClick={() => addToCart(confectionId, count)}
+			>
+				Back to Store
+			</Button>
+			<Layout
+				size="20px"
+				border="1px solid #000"
+				radius="12px"
+				margin="auto"
+				height="48px"
+				width="250px"
+			>
+				ITEMS - TOTALPRICE
+			</Layout>
 		</div>
 	);
 };
 
 export const CartForm = styled(CartFormContainer)`
- 		display: flex;
- `;
+	display: flex;
+`;
 
 // Comments.propTypes = {
 // 	comments: PropTypes.arrayOf(PROP_TYPE.COMMENT).isRequired,
 // 	postId: PropTypes.string.isRequired,
 // };
-
 
 // import { useState } from 'react';
 // import { useDispatch } from 'react-redux';
