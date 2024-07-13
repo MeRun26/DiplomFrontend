@@ -1,7 +1,7 @@
-import { /*useNavigate*/ } from 'react-router-dom';
-import { H2, Icon } from '../../../../components';
+import {} from /*useNavigate*/ "react-router-dom";
+import { H2, Icon } from "../../../../components";
 // import { /*SpecialPanel*/ } from '../special-panel/special-panel';
-import styled from 'styled-components';
+import styled from "styled-components";
 // import { PROP_TYPE } from '../../../../constants';
 
 const ConfectionContentContainer = ({
@@ -15,25 +15,23 @@ const ConfectionContentContainer = ({
 			<img src={confectionImage} alt={name} />
 			<H2>{name}</H2>
 			<div className="special-panel">
-				<div>{price}</div>
+				<div>{price} + "⃀"</div>
 				<div className={className}>
 					<div className="buttons">
 						{/* {editButton} */}
 						<Icon
 							id="fa-pencil-square-o"
 							margin="0 15px 0 0 "
-						// onClick={() => onPostRemove(confectionId)}
+							// onClick={() => onPostRemove(confectionId)}
 						/>
 						<Icon
 							id="fa-trash-o"
-						// onClick={() => onPostRemove(confectionId)}
+							// onClick={() => onPostRemove(confectionId)}
 						/>
 					</div>
 				</div>
 			</div>
-			<div className='confection-text'>{description}</div>
-
-			<hr />
+			<div className="confection-text">{description}</div>
 			{/* <div className="cofection-property">
 				<div>Category: </div>
 				<div>Weight: </div>
@@ -64,21 +62,20 @@ const ConfectionContentContainer = ({
 export const ConfectionContent = styled(ConfectionContentContainer)`
 	& img {
 		float: left;
-		margin: 0 20px 0px 0;
-		height: 350px;
-		width: 350px;
+		margin: 0 50px 0px 0;
+		height: 300px;
+		width: 300px;
 	}
 
 	& .confection-text {
 		font-size: 18px;
 		white-space: pre-line;
 	}
-	 	& .buttons {
- 		display: flex;
+	& .buttons {
+		display: flex;
 	}
 
 	& .cofection-property {
-
 	}
 
 	& .special-panel {

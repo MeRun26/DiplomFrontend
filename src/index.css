@@ -1,54 +1,56 @@
-@import url('fonts/font-awesome.css');
+@import url("fonts/font-awesome.css");
 
 body {
-  margin: 0;
-  font-family: "RobotoSlab";
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #FFE4E1;
+	margin: 0;
+	font-family: "RobotoSlab";
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: #ffe4e1;
 }
 
 html,
 body,
 #root {
-  height: 100%;
-  font-family: "RobotoSlab";
-  src: url("./fonts/Robotoslab/RobotoSlab-Regular.ttf");
-  src: url("./fonts/Robotoslab/RobotoSlab-Black.ttf");
-  src: url("./fonts/Robotoslab/RobotoSlab-Bold.ttf");
-  src: url("./fonts/Robotoslab/RobotoSlab-ExtraBold.ttf");
-  src: url("./fonts/Robotoslab/RobotoSlab-ExtraLight.ttf");
-  src: url("./fonts/Robotoslab/RobotoSlab-Light.ttf");
-  src: url("./fonts/Robotoslab/RobotoSlab-Medium.ttf");
-  src: url("./fonts/Robotoslab/RobotoSlab-SemiBold.ttf");
-  src: url("./fonts/Robotoslab/RobotoSlab-Thin.ttf");
-  src: url("./fonts/Robotoslab/RobotoSlab-VariableFont_wght.ttf");
+	height: 100%;
+	font-family: "RobotoSlab";
+	src: url("./fonts/Robotoslab/RobotoSlab-Regular.ttf");
+	src: url("./fonts/Robotoslab/RobotoSlab-Black.ttf");
+	src: url("./fonts/Robotoslab/RobotoSlab-Bold.ttf");
+	src: url("./fonts/Robotoslab/RobotoSlab-ExtraBold.ttf");
+	src: url("./fonts/Robotoslab/RobotoSlab-ExtraLight.ttf");
+	src: url("./fonts/Robotoslab/RobotoSlab-Light.ttf");
+	src: url("./fonts/Robotoslab/RobotoSlab-Medium.ttf");
+	src: url("./fonts/Robotoslab/RobotoSlab-SemiBold.ttf");
+	src: url("./fonts/Robotoslab/RobotoSlab-Thin.ttf");
+	src: url("./fonts/Robotoslab/RobotoSlab-VariableFont_wght.ttf");
 }
 
 a {
-  color: #000;
-  text-decoration: none;
+	color: #000;
+	text-decoration: none;
 }
 
 button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 600;
-  font-family: Roboto Slab;
-  background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 600;
+	font-family: Roboto Slab;
+	background-color: #fff;
 }
 
 code {
-  font-family: 'RobotoSlab';
+	font-family: "RobotoSlab";
 }
 
 @font-face {
-  font-family: "PacificoRegular";
-  src: url("./fonts/PacificoRegular/PacificoRegular.eot");
-  src: url("./fonts/PacificoRegular/PacificoRegular.eot?#iefix")format("embedded-opentype"),
-    url("./fonts/PacificoRegular/PacificoRegular.woff") format("woff"),
-    url("./fonts/PacificoRegular/PacificoRegular.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 400;
+	font-family: "PacificoRegular";
+	src: url("./fonts/PacificoRegular/PacificoRegular.eot");
+	src:
+		url("./fonts/PacificoRegular/PacificoRegular.eot?#iefix")
+			format("embedded-opentype"),
+		url("./fonts/PacificoRegular/PacificoRegular.woff") format("woff"),
+		url("./fonts/PacificoRegular/PacificoRegular.ttf") format("truetype");
+	font-style: normal;
+	font-weight: 400;
 }

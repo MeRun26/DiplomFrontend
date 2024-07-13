@@ -1,7 +1,7 @@
 import { getCart } from '../api';
 
-export const fetchCart = async (cartId) => {
-    const cart = await getCart(cartId);
+export const fetchCart = async (userId) => {
+    const cart = await getCart(userId);
 
     return {
         error: null,

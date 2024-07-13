@@ -22,119 +22,102 @@ const CartFormContainer = ({ className, cart, confectionId }) => {
 
 	return (
 		<div className={className}>
-			<Layout
-				size="20px"
-				border="1px solid #000"
-				radius="12px"
-				margin="auto"
-				height="48px"
-				width="50px"
-			>
-				{count}
+			<Layout className="quick-shop" size="20px">
+				Quick Shop
 			</Layout>
-			<div>
-				<Button
-					size="20px"
-					width="30px"
-					height="25px"
-					margin="auto"
-					onClick={() => setCount((prev) => prev + 1)}
-				>
-					+
-				</Button>
-				<Button
-					size="20px"
-					width="30px"
-					height="25px"
-					margin="auto"
-					onClick={() => setCount((prev) => (prev <= 1 ? prev : prev - 1))}
-				>
-					-
-				</Button>
-			</div>
 
-			<Button
-				id="fa-paper-plane-o"
-				margin="auto"
-				size="20px"
-				radius="20px"
-				// width="150px"
-				height="50px"
-				// onClick={() => addToCart(confectionId, count)}
-			>
-				Add to Cart
-			</Button>
-			<Button
-				id="fa-paper-plane-o"
-				margin="auto"
-				size="20px"
-				radius="20px"
-				// width="150px"
-				height="50px"
-				// onClick={() => addToCart(confectionId, count)}
-			>
-				Back to Store
-			</Button>
-			<Layout
-				size="20px"
-				border="1px solid #000"
-				radius="12px"
-				margin="auto"
-				height="48px"
-				width="250px"
-			>
-				ITEMS - TOTALPRICE
+			<div className="edit-cart">
+				<Layout className="count-display">{count}</Layout>
+				<div className="edit-buttons">
+					<Button
+						size="10px"
+						width="50px"
+						height="20px"
+						margin="0 0 0 10px"
+						radius="10px"
+						onClick={() => setCount((prev) => prev + 1)}
+					>
+						+
+					</Button>
+					<Button
+						size="10px"
+						width="50px"
+						height="20px"
+						margin="5px 0 0 10px"
+						radius="10px"
+						onClick={() => setCount((prev) => (prev <= 1 ? prev : prev - 1))}
+					>
+						-
+					</Button>
+				</div>
+				<Button className="add-to-cart">Add to Cart</Button>
+			</div>
+			<Layout className="total-price" family="Roboto Slab">
+				items - TotalPrice
 			</Layout>
+
+			<Button className="back-to-store">Back to Store</Button>
 		</div>
 	);
 };
 
 export const CartForm = styled(CartFormContainer)`
+	width: 100%;
+	margin: 10px 0 0 150px;
+	max-width: 300px;
 	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 15px;
+
+	.quick-shop {
+		font-size: 30px;
+	}
+
+	.count-display {
+		font-size: 20px;
+		border: 1px solid #000;
+		border-radius: 12px;
+		margin: 0 0 0 10px;
+		height: 50px;
+		width: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.edit-cart {
+		display: flex;
+		gap: 10px;
+		align-items: center;
+	}
+
+	.add-to-cart {
+		font-size: 20px;
+		height: 50px;
+		width: 160px;
+	}
+
+	.back-to-store {
+		font-size: 20px;
+		height: 50px;
+		width: 100%;
+	}
+
+	.total-price {
+		font-size: 20px;
+		border: 1px solid #000;
+		border-radius: 12px;
+		margin: auto;
+		height: 50px;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 `;
 
 // Comments.propTypes = {
 // 	comments: PropTypes.arrayOf(PROP_TYPE.COMMENT).isRequired,
 // 	postId: PropTypes.string.isRequired,
 // };
-
-// import { useState } from 'react';
-// import { useDispatch } from 'react-redux';
-// import { addToCartAsync } from './actions';
-// import { Button, Layout } from './components';
-// import styled from 'styled-components';
-
-// // Компонент для добавления товара в корзину
-// const CartFormContainer = ({ className, confectionId }) => {
-// 	const [count, setCount] = useState(0); // Локальное состояние для количества товара
-// 	const dispatch = useDispatch();
-
-// 	// Функция для добавления товара в корзину
-// 	const handleAddToCart = () => {
-// 		dispatch(addToCartAsync(confectionId, count));
-// 		setCount(0); // Сбрасываем количество после добавления
-// 	};
-
-// 	return (
-// 		<div className={className}>
-// 			<Layout size="20px" border="1px solid #000" radius="12px" margin="0 0 20px" height="48px" width="50px">
-// 				{count}
-// 			</Layout>
-// 			<div>
-// 				<Button size="20px" width="30px" height="25px" margin="0 0 0 10px" onClick={() => setCount(count + 1)}>
-// 					+
-// 				</Button>
-// 				<Button size="20px" width="30px" height="25px" margin="0 0 0 10px" onClick={() => setCount(count - 1)}>
-// 					-
-// 				</Button>
-// 			</div>
-// 			<Button id="fa-paper-plane-o" margin="0 0 0 10px" size="20px" radius="20px" height="50px" onClick={handleAddToCart}>
-// 				Добавить в корзину
-// 			</Button>
-// 		</div>
-// 	);
-// };
-
-// export const CartForm = styled(CartFormContainer)`
-//   display: flex;
-// `;
